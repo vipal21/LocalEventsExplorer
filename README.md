@@ -42,3 +42,13 @@ The project includes an isolated automated test framework using `XCTest` alongsi
 
 Run the test suite seamlessly inside Xcode by applying the standard shortcut pattern:
 👉 `Cmd + U`
+
+
+## Architecture and Sequence Diagrams
+<img width="1408" height="768" alt="image_9946d347" src="https://github.com/user-attachments/assets/645a0e2e-0f6b-4207-a7ba-2aed30a51f76" />
+
+
+<img width="1408" height="768" alt="image_9bc8141e" src="https://github.com/user-attachments/assets/4a0ec3ab-939e-4e6f-a8b2-cada310ff3d6" />
+
+
+
