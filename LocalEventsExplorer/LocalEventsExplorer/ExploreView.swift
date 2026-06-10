@@ -74,7 +74,7 @@ struct ExploreView: View {
                     CompactExploreCardView(
                         event: event,
                         selectedEvent: $selectedDetailEvent,
-                        onToggleFavorite: { event in
+                        onToggleFavourite: { event in
                             viewModel.toggleFavourite(for: event)
                         }
                     )

@@ -32,9 +32,9 @@ final class OnlineEventService: EventServiceProtocol {
         print("🌐 Calling Event API...")
         let apiEvents = try await client.fetch([Event].self, from: urlString)
         print("✅ API event response count: \(apiEvents.count)")
-        // Create a dictionary map of existing favorite statuses stored locally on device
+        // Create a dictionary map of existing favourite statuses stored locally on device
         let localFavoritesMap = Dictionary(uniqueKeysWithValues: localEvents.map { ($0.id, $0.isFavourite) })
-        // Map the incoming network array to preserve what the user already favorited locally
+        // Map the incoming network array to preserve what the user already favourite locally
         let apiEventsPreservingFavorites = apiEvents.map { networkEvent in
             Event(
                 id: networkEvent.id,
@@ -58,7 +58,7 @@ final class OnlineEventService: EventServiceProtocol {
         if sortedAPIEvents != sortedLocalEvents {
             print("🔄 Actual server data payload changed! Updating Core Data...")
             try await coreDataManager.deleteAllEvents()
-            // Save the updated list that preserves existing favorites
+            // Save the updated list that preserves existing favourite
             try await coreDataManager.saveEvents(apiEventsPreservingFavorites)
             return sortedAPIEvents
         } else {

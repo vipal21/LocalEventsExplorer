@@ -89,7 +89,7 @@ final class CoreDataManager {
             if let event = try self.container.viewContext.fetch(request).first {
                 event.isFavourite = isFavourite
                 try self.container.viewContext.save()
-                print("💾 Core Data favorite status updated for ID \(eventID): \(isFavourite)")
+                print("💾 Core Data favourite status updated for ID \(eventID): \(isFavourite)")
             }
         }
     }

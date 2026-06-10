@@ -11,7 +11,7 @@ import MapKit
 struct EventDetailView: View {
     let event: Event
     var onSaveToggle: () -> Void
-    // Tracks the favorite state locally on this screen so the UI updates instantly
+    // Tracks the favourite state locally on this screen so the UI updates instantly
     @State private var isCurrentlyFavourite: Bool
     // Custom initializer to set up the initial local state from the passed Event model
     init(event: Event, onSaveToggle: @escaping () -> Void) {
@@ -75,7 +75,7 @@ struct EventDetailView: View {
                         Spacer()
                         // Circle Action Buttons
                         HStack(spacing: 8) {
-                            // Favorite / Save Button
+                            // Favourite / Save Button
                             Button(action: {
                                 withAnimation(.spring(response: 0.3, dampingFraction: 0.5)) {
                                     isCurrentlyFavourite.toggle() // Flips icon instantly

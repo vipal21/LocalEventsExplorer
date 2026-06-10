@@ -30,7 +30,7 @@ struct MainTabBarView: View {
                 }
                 .tag(1)
 
-            FavoriteListView(viewModel: sharedExploreViewModel)
+            FavouriteListView(viewModel: sharedExploreViewModel)
                 .tabItem {
                     Label("Favorites", systemImage: "heart.fill")
                 }

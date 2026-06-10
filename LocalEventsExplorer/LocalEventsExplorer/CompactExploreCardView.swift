@@ -11,7 +11,7 @@ import MapKit
 struct CompactExploreCardView: View {
     let event: Event
     @Binding var selectedEvent: Event?
-    let onToggleFavorite: (Event) -> Void
+    let onToggleFavourite: (Event) -> Void
 
     private let thumbnailSize: CGFloat = 85
     private let actionButtonSize: CGFloat = 30
@@ -79,7 +79,7 @@ struct CompactExploreCardView: View {
         VStack(spacing: 8) {
             Button(action: {
                 withAnimation(.spring(response: 0.3, dampingFraction: 0.5)) {
-                    onToggleFavorite(event)
+                    onToggleFavourite(event)
                 }
             }) {
                 Image(systemName: event.isFavourite ? "heart.fill" : "heart")
