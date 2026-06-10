@@ -10,7 +10,27 @@ struct ExploreView: View {
     var body: some View {
         NavigationStack {
             ZStack(alignment: .bottom) {
-                Map() {}
+                Map(position: $viewModel.position, selection: $viewModel.tappedPinID) {
+                    ForEach(viewModel.events) { event in
+                        Annotation(
+                            event.title,
+                            coordinate: CLLocationCoordinate2D(latitude: event.latitude, longitude: event.longitude)
+                        ) {
+                            DetailedAnnotationPinView(
+                                event: event,
+                                isSelected: viewModel.tappedPinID == event.id,
+                                userLocation: viewModel.currentUserLocation ?? CLLocation(latitude: 51.0474, longitude: -114.0597)
+                            )
+                            .frame(width: 60, height: 60)
+                            .contentShape(Rectangle())
+                            // Fix 1: Add a direct click gesture handler to trigger the detail screen instantly
+                            .onTapGesture {
+                                selectedDetailEvent = event
+                            }
+                        }
+                        .tag(event.id)
+                    }
+                }
                 .mapControls {
                     MapUserLocationButton()
                     MapCompass()
@@ -18,6 +38,11 @@ struct ExploreView: View {
                 .ignoresSafeArea(edges: .top)
 
                 carouselOverlaySection
+            }
+            .navigationDestination(item: $selectedDetailEvent) { event in
+                EventDetailView(event: event, onSaveToggle: {
+                    viewModel.toggleFavourite(for: event)
+                })
             }
         }
         // Fix 2: Keep the carousel synchronized when scrolling triggers pin status mutations

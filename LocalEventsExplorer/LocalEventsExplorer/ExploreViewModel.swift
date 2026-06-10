@@ -4,7 +4,6 @@
 //
 //  Created by vipal on 2026-06-10.
 //
-
 import Foundation
 import MapKit
 import Observation
@@ -99,6 +98,15 @@ final class ExploreViewModel: NSObject, CLLocationManagerDelegate {
         }
     }
 
+    // Replace the old selectPin method in ExploreViewModel with this simplified coordinator function:
+    func selectPinDirectly(for id: Int64) {
+        tappedPinID = id
+        scrolledID = id
+
+        guard let targetEvent = events.first(where: { $0.id == id }) else { return }
+        updateCameraPosition(latitude: targetEvent.latitude, longitude: targetEvent.longitude)
+    }
+
     /// Responds smoothly when the user drags/swipes across the horizontal carousel items
     func processCarouselScroll(to newID: Int64?) {
         guard let newID = newID,
@@ -179,4 +187,3 @@ final class ExploreViewModel: NSObject, CLLocationManagerDelegate {
         }
     }
 }
-
