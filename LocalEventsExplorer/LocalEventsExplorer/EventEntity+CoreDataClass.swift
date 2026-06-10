@@ -2,7 +2,7 @@
 //  EventEntity+CoreDataClass.swift
 //  LocalEventsExplorer
 //
-//  Created by vipal on 2026-06-09.
+//  Created by vipal on 2026-06-10.
 //
 //
 
