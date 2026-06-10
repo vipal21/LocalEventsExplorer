@@ -24,6 +24,17 @@ struct MainTabBarView: View {
                     Label("Explore", systemImage: "map")
                 }
                 .tag(0)
+            AllEventsListView()
+                .tabItem {
+                    Label("All Events", systemImage: "calendar")
+                }
+                .tag(1)
+
+            FavoriteListView()
+                .tabItem {
+                    Label("Favorites", systemImage: "heart.fill")
+                }
+                .tag(2)
         }
         .tint(.blue)
     }
