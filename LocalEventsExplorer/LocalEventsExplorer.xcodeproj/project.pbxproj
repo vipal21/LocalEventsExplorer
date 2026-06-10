@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		987D13E22FD9A9CA0079A1BA /* LocalEventExplorerDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 987D13E02FD9A9CA0079A1BA /* LocalEventExplorerDataModel.xcdatamodeld */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		987D13C02FD9A3D50079A1BA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +31,7 @@
 		987D13B22FD9A3D10079A1BA /* LocalEventsExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocalEventsExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		987D13BF2FD9A3D50079A1BA /* LocalEventsExplorerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocalEventsExplorerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		987D13C92FD9A3D50079A1BA /* LocalEventsExplorerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocalEventsExplorerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		987D13E12FD9A9CA0079A1BA /* LocalEventExplorerDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LocalEventExplorerDataModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -75,6 +80,7 @@
 		987D13A92FD9A3D10079A1BA = {
 			isa = PBXGroup;
 			children = (
+				987D13E02FD9A9CA0079A1BA /* LocalEventExplorerDataModel.xcdatamodeld */,
 				987D13B42FD9A3D10079A1BA /* LocalEventsExplorer */,
 				987D13C22FD9A3D50079A1BA /* LocalEventsExplorerTests */,
 				987D13CC2FD9A3D50079A1BA /* LocalEventsExplorerUITests */,
@@ -236,6 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				987D13E22FD9A9CA0079A1BA /* LocalEventExplorerDataModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -578,6 +585,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		987D13E02FD9A9CA0079A1BA /* LocalEventExplorerDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				987D13E12FD9A9CA0079A1BA /* LocalEventExplorerDataModel.xcdatamodel */,
+			);
+			currentVersion = 987D13E12FD9A9CA0079A1BA /* LocalEventExplorerDataModel.xcdatamodel */;
+			path = LocalEventExplorerDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 987D13AA2FD9A3D10079A1BA /* Project object */;
 }

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Foundation
+import CoreData
 
 struct ContentView: View {
     private let viewModel = ContentViewModel()
@@ -24,8 +25,12 @@ struct ContentView: View {
 @MainActor
 @Observable
 final class ContentViewModel {
+    let container = NSPersistentContainer(name: "LocalEventExplorerDataModel")
+
     init(){
+        checkCoreDataConnections()
         getDataFromFile()
+        
     }
     var events: [Event] = []
     func getDataFromFile (){
@@ -43,6 +48,15 @@ final class ContentViewModel {
 
 
     }
+    func checkCoreDataConnections(){
+        container.loadPersistentStores { _, error in
+            if let error {
+                print("Core Data error:", error)
+            }
+            print("Core Data connected")
+        }
+    }
+
 }
 
 
