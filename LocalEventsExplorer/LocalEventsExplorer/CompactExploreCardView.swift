@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct CompactExploreCardView: View {
     let event: Event
@@ -103,7 +104,16 @@ struct CompactExploreCardView: View {
     }
 
     private func openAppleMapsDirections() {
+          let coordinate = CLLocationCoordinate2D(latitude: event.latitude, longitude: event.longitude)
+          let targetLocation = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
 
+          // Fix: Properly instantiate the modern MKAddress instance to pass your venue string safely
+          let mapAddress = MKAddress(fullAddress: event.venue, shortAddress: nil)
+          let mapItem = MKMapItem(location: targetLocation, address: mapAddress)
+
+          mapItem.name = event.title
+          let launchOptions = [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving]
+          mapItem.openInMaps(launchOptions: launchOptions)
       }
 }
 
