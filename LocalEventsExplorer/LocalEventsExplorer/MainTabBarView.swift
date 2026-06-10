@@ -24,7 +24,7 @@ struct MainTabBarView: View {
                     Label("Explore", systemImage: "map")
                 }
                 .tag(0)
-            AllEventsListView()
+            AllEventsListView(viewModel: sharedExploreViewModel)
                 .tabItem {
                     Label("All Events", systemImage: "calendar")
                 }
